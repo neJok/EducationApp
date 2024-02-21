@@ -10,7 +10,7 @@ export default function GetUser() {
 
     useEffect(() => {
         if (initDataRaw) {
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/me`, {
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/me/`, {
                 headers: {
                     "X-Telegram-Init-Data": initDataRaw
                 },
