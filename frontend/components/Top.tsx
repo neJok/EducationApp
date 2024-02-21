@@ -12,7 +12,7 @@ export default function Top() {
   const [users, setUsers] = useState<User[]>([])
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/top`, {method: "POST"}).then((res) => res.json().then((data) => setUsers(data)))
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/top/`, {method: "POST"}).then((res) => res.json().then((data) => setUsers(data)))
   }, []);
 
   return (
