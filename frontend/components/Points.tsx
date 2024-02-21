@@ -1,10 +1,9 @@
 import styles from "@/styles/Points.module.css";
 import {useAppSelector} from "@/lib/hooks";
-import {selectUserState} from "@/lib/Features/User/userSlice";
 import Loading from "@/components/Loading";
 
 export default function Points() {
-  const state = useAppSelector(selectUserState)
+  const state = useAppSelector((state) => state.user);
 
   return (
     <>
