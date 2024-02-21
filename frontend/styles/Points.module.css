@@ -1,0 +1,42 @@
+.points {
+    display: flex;
+    flex-direction: column;
+    height: 122px;
+    border-radius: 30px;
+    background: url("/bg-points.svg") no-repeat;
+    background-clip: border-box;
+    color: white;
+    justify-content: center;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.points div {
+    display: flex;
+    align-items: flex-end;
+}
+
+.points div h1 {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.points div span {
+    font-weight: normal;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.points span {
+    font-size: 14px;
+}
+
+.greeting {
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+}
+
+.greeting div {
+    margin-left: 5px;
+}

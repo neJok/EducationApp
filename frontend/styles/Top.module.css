@@ -1,0 +1,48 @@
+.title {
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.users {
+    background: linear-gradient(128.66deg, rgb(137, 62, 156) 16.631%,rgb(248, 43, 115) 85.578%);
+    border-radius: 20px;
+    color: white;
+    padding-left: 5px;
+
+}
+
+.user {
+    display: flex;
+    height: 64px;
+    align-items: center;
+    padding: 2px;
+    width: 100%;
+}
+
+.avatar {
+    border-radius: 999px;
+    margin-right: 5px;
+}
+
+.first_name {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.place {
+    width: 100%;
+    padding-right: 20px;
+    text-align: right;
+    font-size: 25px;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.user_info {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    height: 40px;
+    justify-content: space-between;
+}

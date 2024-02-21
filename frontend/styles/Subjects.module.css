@@ -1,0 +1,26 @@
+.title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.subjects {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.subject {
+    height: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}

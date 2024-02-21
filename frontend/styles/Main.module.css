@@ -1,0 +1,8 @@
+.page_layout {
+    height: 100%;
+    width: 100%;
+}
+
+.page_inner {
+    padding: 30px 18px;
+}
