@@ -2,6 +2,7 @@
 
 import type { PropsWithChildren } from 'react';
 import {SDKProvider, DisplayGate, useInitDataRaw} from '@tma.js/sdk-react';
+import styles from "@/styles/Loader.module.css"
 
 interface SDKProviderErrorProps {
   error: unknown;
@@ -23,7 +24,15 @@ function SDKProviderError({ error }: SDKProviderErrorProps) {
 }
 
 function SDKInitialState() {
-  return <div>Waiting for initialization to start.</div>;
+  return (<div className={styles.inner}><div className={styles.load}>
+  <div>G</div>
+  <div>N</div>
+  <div>I</div>
+  <div>D</div>
+  <div>A</div>
+  <div>O</div>
+  <div>L</div>
+</div></div>); // сюда лоад
 }
 
 /**
