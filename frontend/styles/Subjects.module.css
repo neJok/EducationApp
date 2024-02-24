@@ -23,4 +23,9 @@
     color: white;
     font-size: 18px;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.subject:hover {
+    opacity: 0.8;
 }

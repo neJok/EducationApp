@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {ReactEventHandler, useState} from "react";
+import {useState} from "react";
 
 export default function Avatar({avatarURL, size, className}: {avatarURL: string, size: number, className: string}) {
     const [src, setSrc] = useState(avatarURL)

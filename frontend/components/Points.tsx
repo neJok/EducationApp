@@ -1,23 +1,23 @@
 import styles from "@/styles/Points.module.css";
-import {useAppSelector} from "@/lib/hooks";
 import Loading from "@/components/Loading";
+import useUser from "@/hooks/useUser";
 
 export default function Points() {
-  const state = useAppSelector((state) => state.user);
+  const {user, loading} = useUser()
 
   return (
     <>
       <h1 className={styles.greeting}>Привет,
-        {state.loading?
+        {loading?
           <Loading width={50} height={40} /> :
-          <div>{state.user.first_name}</div>
+          <div>{user?.first_name}</div>
         }!
       </h1>
       <div className={styles.points}>
           <div>
-            {state.loading?
+            {loading?
               <Loading width={50} height={40} /> :
-              <h1>{state.user.points}</h1>
+              <h1>{user?.points}</h1>
             }
             <span>Points</span>
           </div>

@@ -4,11 +4,11 @@ from app.internal.utils.database import MongoDB
 database = MongoDB()
 
 router = APIRouter(
-    prefix='/api/top'
+    prefix='/api/subjects'
 )
 
 
 @router.post("/")
-async def get_top(
+async def get_subjects(
 ):
-    return await database.get_top()
+    return await database.get_subjects()

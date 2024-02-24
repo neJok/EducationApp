@@ -1,5 +1,4 @@
 'use client';
-
 import type { PropsWithChildren } from 'react';
 import {SDKProvider, DisplayGate, useInitDataRaw} from '@tma.js/sdk-react';
 import styles from "@/styles/Loader.module.css"
@@ -23,28 +22,30 @@ function SDKProviderError({ error }: SDKProviderErrorProps) {
   );
 }
 
-function SDKInitialState() {
-  return (<div className={styles.inner}><div className={styles.load}>
-  <div>G</div>
-  <div>N</div>
-  <div>I</div>
-  <div>D</div>
-  <div>A</div>
-  <div>O</div>
-  <div>L</div>
-</div></div>); // сюда лоад
+export function LoadingState() {
+  return (
+    <div className={styles.inner}>
+      <div className={styles.load}>
+        <div>G</div>
+        <div>N</div>
+        <div>I</div>
+        <div>D</div>
+        <div>A</div>
+        <div>O</div>
+        <div>L</div>
+      </div>
+    </div>
+  );
 }
 
-/**
- * Root component of the whole project.
- */
+
 export function TmaSDKLoader({ children }: PropsWithChildren) {
   return (
     <SDKProvider options={{ cssVars: true, acceptCustomStyles: true, async: true }}>
       <DisplayGate
         error={SDKProviderError}
-        loading={SDKInitialState}
-        initial={SDKInitialState}
+        loading={LoadingState}
+        initial={LoadingState}
       >
         {children}
       </DisplayGate>

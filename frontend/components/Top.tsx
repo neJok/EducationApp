@@ -1,6 +1,7 @@
 import styles from '@/styles/Top.module.css'
 import {useEffect, useState} from "react";
 import Avatar from "@/components/Avatar";
+import axios from "axios";
 
 export default function Top() {
   interface User {
@@ -12,7 +13,9 @@ export default function Top() {
   const [users, setUsers] = useState<User[]>([])
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/top/`, {method: "POST", next: { revalidate: 10 }}).then((res) => res.json().then((data) => setUsers(data)))
+    axios
+      .post(`${process.env.NEXT_PUBLIC_API_URL}/top/`)
+      .then((response) => setUsers(response.data))
   }, []);
 
   return (

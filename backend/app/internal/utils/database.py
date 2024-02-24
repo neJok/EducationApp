@@ -20,6 +20,7 @@ class MongoDB:
         self.client = AsyncIOMotorClient(MONGODB_URL)
         self.db = self.client['education']
         self.users = self.db['users']
+        self.subjects = self.db['subjects']
 
     async def get_user(self, user_id: int, first_name, username) -> dict:
         user_id = str(user_id)
@@ -43,3 +44,8 @@ class MongoDB:
         cursor = self.users.find({}, projection)
         cursor.sort('points', -1).limit(10)
         return await cursor.to_list(length=10)
+
+    async def get_subjects(self):
+        projection = {"_id": 0}
+        return await self.subjects.find({}, projection).to_list(None)
+
