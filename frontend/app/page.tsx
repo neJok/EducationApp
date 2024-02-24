@@ -5,7 +5,7 @@ import Points from "@/components/Points";
 import Top from "@/components/Top";
 import {useBackButton} from "@tma.js/sdk-react";
 
-export default function Home() {
+export default function Page() {
   const backButton = useBackButton();
   if (backButton.isVisible) {
     backButton.hide()

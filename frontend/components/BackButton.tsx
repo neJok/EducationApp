@@ -13,7 +13,7 @@ export default function BackButton() {
     return () => {
       backButton.off('click', onBackButtonClick);
     };
-  }, []);
+  }, [backButton]);
 
   return null
 }

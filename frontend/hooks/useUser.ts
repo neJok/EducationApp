@@ -9,10 +9,10 @@ function useUser() {
   const initDataRaw = useInitDataRaw()
 
   useEffect(() => {
-    if (!state.user && initDataRaw) {
+    if (!state.user && !state.error && initDataRaw) {
       dispatch(fetchUser(initDataRaw));
     }
-  }, [dispatch, state]);
+  }, [dispatch]);
 
   return state;
 }

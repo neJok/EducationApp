@@ -7,10 +7,10 @@ function useSubjects() {
   const state = useAppSelector((state) => state.subjects);
 
   useEffect(() => {
-    if (state.subjects.length === 0) {
+    if (state.subjects.length === 0 && !state.error) {
       dispatch(fetchSubjects());
     }
-  }, [dispatch, state]);
+  }, [dispatch]);
 
   return state;
 }

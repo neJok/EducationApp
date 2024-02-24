@@ -1,0 +1,35 @@
+.content {
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.training_classes {
+    margin-top: 20px;
+    display: grid;
+    padding-left: 14px;
+    padding-right: 14px;
+    height: 100%;
+    padding-bottom: 20px;
+    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 20px;
+}
+
+.training_class {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
