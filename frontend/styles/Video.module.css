@@ -1,0 +1,49 @@
+.content {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.frame {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: black;
+}
+
+.title {
+    position: absolute;
+    text-align: center;
+    background: white;
+    width: min-content;
+    color: black;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    left: 0;
+    right: 0;
+}
+
+.next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+    border-radius: 20px;
+    bottom: 80px;
+    width: 150px;
+    height: 50px;
+    background: white;
+    transition: opacity 0.3s ease;
+    color: black;
+}
+
+.next:hover, .next:visited, .next:active {
+    opacity: 0.8;
+    background: #FFFFFF;
+}

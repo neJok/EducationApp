@@ -1,4 +1,6 @@
 from fastapi import APIRouter
+from pydantic import BaseModel
+
 from app.internal.utils.database import MongoDB
 
 database = MongoDB()

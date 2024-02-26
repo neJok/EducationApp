@@ -1,0 +1,43 @@
+.content {
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.class {
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.lesson {
+    width: 100%;
+    height: 63px;
+    border-radius: 20px;
+    margin-top: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.lessons {
+    display: flex;
+    padding-left: 14px;
+    padding-right: 14px;
+    flex-direction: column;
+}
+
+.lesson:hover, .lessons:visited {
+    opacity: 0.8;
+}

@@ -1,0 +1,15 @@
+@keyframes pulse {
+  0% {
+    background-color: #7E7E7E;
+  }
+  50% {
+    background-color: #868484;
+  }
+  100% {
+    background-color: #7E7E7E;
+  }
+}
+
+.pulsating {
+  animation: pulse 2s infinite;
+}

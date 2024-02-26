@@ -32,4 +32,9 @@
     align-items: center;
     justify-content: center;
     font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.training_class:hover, .training_class:visited {
+    opacity: 0.8;
 }

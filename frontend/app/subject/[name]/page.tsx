@@ -7,6 +7,8 @@ import {notFound} from "next/navigation";
 import {LoadingState} from "@/components/TmaSDKLoader";
 import styles from '@/styles/Subject.module.css'
 import Link from "next/link";
+import {getRandomGradient} from "@/lib/utils";
+import fade_in from "@/styles/FadeIn.module.css";
 
 export default function Page({ params }: { params: { name: string } }) {
   const { subjects, loading } = useSubjects();
@@ -24,24 +26,13 @@ export default function Page({ params }: { params: { name: string } }) {
     }
   }, [params.name, subjects]);
 
-
-  let gradients = ['linear-gradient(128.66deg, rgb(156, 62, 152) 19.063%,rgb(170, 43, 248) 83.119%)', 'linear-gradient(128.66deg, rgb(62, 117, 156) 19.063%,rgb(109, 43, 248) 83.119%)']
-  let remainingGradients = [...gradients]
-  function getRandomGradient(): string | undefined {
-    if (remainingGradients.length === 0) {
-      remainingGradients = [...gradients]
-    }
-    const index = Math.floor(Math.random() * remainingGradients.length);
-    return remainingGradients.splice(index, 1)[0];
-  }
-
   return (
     <>
       <BackButton />
       {loading ? <LoadingState/> : (
         <div className={styles.content}>
           <h1 className={styles.title}>{currentSubject?.label}</h1>
-          <div className={styles.training_classes}>
+          <div className={styles.training_classes + " " + fade_in.style}>
             {currentSubject?.lessons &&
               Object.keys(currentSubject.lessons).map((trainingClass, index) =>
                 <Link

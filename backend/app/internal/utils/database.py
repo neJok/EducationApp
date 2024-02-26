@@ -21,6 +21,9 @@ class MongoDB:
         self.db = self.client['education']
         self.users = self.db['users']
         self.subjects = self.db['subjects']
+        self.lessons = self.db['lessons']
+
+        self.projection_without_id = {"_id": 0}
 
     async def get_user(self, user_id: int, first_name, username) -> dict:
         user_id = str(user_id)
@@ -46,6 +49,13 @@ class MongoDB:
         return await cursor.to_list(length=10)
 
     async def get_subjects(self):
-        projection = {"_id": 0}
-        return await self.subjects.find({}, projection).to_list(None)
+        subjects = []
+        async for subject in self.subjects.find({}, self.projection_without_id):
+            for class_, lessons_ids in subject['lessons'].items():
+                subject['lessons'][class_] = await self.get_lessons(lessons_ids)
+            subjects.append(subject)
 
+        return subjects
+
+    async def get_lessons(self, lessons: list[str]):
+        return await self.lessons.find({"lesson_id": {"$in": lessons}}, self.projection_without_id).to_list(None)

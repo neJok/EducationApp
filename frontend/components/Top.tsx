@@ -1,4 +1,5 @@
 import styles from '@/styles/Top.module.css'
+import fade_in from '@/styles/FadeIn.module.css'
 import {useEffect, useState} from "react";
 import Avatar from "@/components/Avatar";
 import axios from "axios";
@@ -21,7 +22,7 @@ export default function Top() {
   return (
     <>
       <h2 className={styles.title}>Топ 10 пользователей</h2>
-      <ul className={styles.users} >
+      <ul className={styles.users + " " + fade_in.style} >
         {users.map((user, index) =>
           <li key={index} className={styles.user}>
             <Avatar avatarURL={`https://t.me/i/userpic/320/${user.username}.jpg`} size={48} className={styles.avatar} />
