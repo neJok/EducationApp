@@ -27,7 +27,7 @@ export default function Page({ params }: { params: { name: string, class: number
       }
       setLesson(currentLesson);
     }
-  }, [params.name, subjects]);
+  }, [params.name, subjects, params.class, params.id]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -47,7 +47,7 @@ export default function Page({ params }: { params: { name: string, class: number
         video.removeEventListener("timeupdate", updateButtonVisibility);
       };
     }
-  }, [videoRef.current]);
+  }, []);
 
   return (
     <>
