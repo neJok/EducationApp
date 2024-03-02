@@ -29,7 +29,16 @@ const initialState: userState = {
 export const userSlice = createSlice({
     name: 'User',
     initialState,
-    reducers: {},
+    reducers: {
+      addTest: (state, test_id: PayloadAction<string>) => {
+         // @ts-ignore
+        state.user.completed_tests.push(test_id.payload)
+      },
+      incPoints: (state, count: PayloadAction<number>) => {
+        // @ts-ignore
+        state.user.points += count.payload
+      }
+    },
     extraReducers: (builder) => {
         builder.addCase(fetchUser.pending, state => {
           state.loading = true
@@ -50,4 +59,5 @@ export const userSlice = createSlice({
     }
 })
 
+export const { addTest, incPoints } = userSlice.actions
 export default userSlice.reducer

@@ -3,4 +3,5 @@ export default interface User {
     username?: string
     first_name?: string
     points: number
+    completed_tests: string[]
 }

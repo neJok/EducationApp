@@ -1,5 +1,4 @@
 from fastapi import APIRouter
-from pydantic import BaseModel
 
 from app.internal.utils.database import MongoDB
 
@@ -11,6 +10,5 @@ router = APIRouter(
 
 
 @router.post("/")
-async def get_subjects(
-):
+async def get_subjects():
     return await database.get_subjects()

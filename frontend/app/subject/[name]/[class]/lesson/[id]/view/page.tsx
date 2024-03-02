@@ -31,11 +31,9 @@ export default function Page({ params }: { params: { name: string, class: number
 
   useEffect(() => {
     const video = videoRef.current;
-    console.log(video)
     if (video) {
       const updateButtonVisibility = () => {
         const timeRemaining = video.duration - video.currentTime;
-        console.log(timeRemaining)
         if (timeRemaining <= 5) {
           setShowContinueButton(true);
         } else {

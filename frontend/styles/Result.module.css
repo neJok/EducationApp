@@ -1,0 +1,42 @@
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 14px;
+}
+
+.text {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    transition: opacity 0.3s ease;
+    color: white;
+    background: linear-gradient(128.66deg, rgb(156, 62, 152) 19.063%,rgb(170, 43, 248) 83.119%);
+}
+
+.next:hover, .next:visited, .next:active {
+    opacity: 0.8;
+}

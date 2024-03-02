@@ -6,3 +6,4 @@ class User(BaseModel):
     username: str
     first_name: str
     points: int
+    completed_tests: list

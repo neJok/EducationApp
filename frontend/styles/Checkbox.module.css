@@ -1,0 +1,10 @@
+.path1{
+    stroke-dasharray:400;
+    stroke-dashoffset:400;
+    transition:.5s all;
+}
+.path2{
+    stroke-dasharray:1800;
+    stroke-dashoffset:1800;
+    transition:.5s all;
+}

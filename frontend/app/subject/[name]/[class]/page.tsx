@@ -9,9 +9,11 @@ import Lesson from "@/lib/Models/lesson";
 import Link from "next/link";
 import {getRandomGradient} from "@/lib/utils";
 import fade_in from "@/styles/FadeIn.module.css";
+import useUser from "@/hooks/useUser";
 
 export default function Page({ params }: { params: { name: string, class: number } }) {
   const { subjects } = useSubjects();
+  const { user } = useUser()
   const [currentSubject, setCurrentSubject] = useState<Subject | undefined>(
     undefined
   );
@@ -40,7 +42,7 @@ export default function Page({ params }: { params: { name: string, class: number
               key={index}
               style={{background: getRandomGradient()}}
             >
-              {lesson.title}
+              {user?.completed_tests.includes(lesson.lesson_id) && '✔️'} {lesson.title}
             </Link>
           )}
         </ul>
