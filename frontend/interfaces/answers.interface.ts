@@ -1,3 +1,3 @@
-export interface Answers {
+export interface IAnswers {
   [key: number]: number[];
 }

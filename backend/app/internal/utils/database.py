@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from motor.motor_asyncio import AsyncIOMotorClient
 from app.configuration.config import MONGODB_URL
 
@@ -52,22 +54,34 @@ class MongoDB:
         return await cursor.to_list(length=10)
 
     async def get_subjects(self):
-        subjects = []
-        async for subject in self.subjects.find({}, self.projection_without_id):
-            for class_, lessons_ids in subject['lessons'].items():
-                lessons = await self.get_lessons(lessons_ids)
-                for lesson in lessons:
-                    for question in lesson['test']:
-                        del question['correct']
+        return await self.subjects.find({}, {'lessons': 0, '_id': 0}).to_list(None)
 
-                subject['lessons'][class_] = lessons
+    async def get_subject_classes(self, subject_id: str):
+        subject = await self.subjects.find_one({"key": subject_id}, {"lessons": 1, "label": 1})
+        if not subject:
+            return list()
 
-            subjects.append(subject)
+        return {
+            "label": subject['label'],
+            "classes": list(subject['lessons'].keys())
+        }
 
-        return subjects
+    async def get_subject_lessons(self, subject_id: str, subject_class: str):
+        subject = await self.subjects.find_one({"key": subject_id}, projection={"lessons": 1, "label": 1})
+        if not subject:
+            return None
 
-    async def get_lessons(self, lessons: list[str]):
-        return await self.lessons.find({"lesson_id": {"$in": lessons}}, self.projection_without_id).to_list(None)
+        lessons = await self.lessons.find({"lesson_id": {"$in": subject['lessons'].get(subject_class, [])}}, {"_id": 0, "test": 0}).to_list(None)
+        return {
+            "label": subject['label'],
+            "lessons": lessons
+        }
+
+    async def get_lesson(self, lesson_id: str):
+        lesson = await self.lessons.find_one({"lesson_id": lesson_id}, self.projection_without_id)
+        for question in lesson['test']:
+            del question['correct']
+        return lesson
 
     async def complete_test(self, user, lesson_id: str, answers: list[list[int]]):
         points = 0

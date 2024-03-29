@@ -1,11 +1,11 @@
-import {type TestResult} from "@/lib/Models/testResult";
+import {type ITestResult} from "@/interfaces/testResult.interface";
 import {useBackButton} from "@tma.js/sdk-react";
 import styles from '@/styles/Result.module.css'
 import Happy from "@/components/Happy";
 import React from "react";
 import Link from "next/link";
 
-export default function Result({correct_answers, points}: TestResult) {
+export default function Result({correct_answers, points}: ITestResult) {
   const backButton = useBackButton();
   backButton.hide()
 
