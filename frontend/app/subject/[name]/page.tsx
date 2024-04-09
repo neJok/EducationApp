@@ -24,7 +24,7 @@ export default function Page({ params }: { params: { name: string } }) {
                   style={{background: getRandomGradient()}}
                   className={styles.training_class}
                 >
-                  {trainingClass} класс
+                  {trainingClass} {!isNaN(Number(trainingClass)) && 'класс'}
                 </Link>
               )
             }

@@ -4,6 +4,13 @@
     font-size: 18px;
 }
 
+.description {
+    margin: 10px 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: gray;
+}
+
 .users {
     background: linear-gradient(128.66deg, rgb(137, 62, 156) 16.631%,rgb(248, 43, 115) 85.578%);
     border-radius: 20px;

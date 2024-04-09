@@ -6,5 +6,5 @@ export interface ISubject {
 
 export interface ISubjectClassesResponse {
   label: string
-  classes: number[]
+  classes: string[]
 }

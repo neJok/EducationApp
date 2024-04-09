@@ -16,7 +16,7 @@ export default function Page({ params }: { params: { name: string, class: string
       <BackButton />
       <div className={styles.content}>
         <h1 className={styles.title}>{data?.label}</h1>
-        <h2 className={styles.class + " " + fade_in.style}>{params.class} класс</h2>
+        <h2 className={styles.class + " " + fade_in.style}>{params.class} {!isNaN(Number(params.class)) && 'класс'}</h2>
         <ul className={styles.lessons + " " + fade_in.style}>
           {data?.lessons.map((lesson, index) =>
             <Link

@@ -9,6 +9,7 @@ export default function Top() {
   return (
     <>
       <h2 className={styles.title}>Топ 10 пользователей</h2>
+      <h2 className={styles.description}>Обновляется каждые 10 секунд</h2>
       <ul className={styles.users + " " + fade_in.style} >
         {users?.map((user, index) =>
           <li key={index} className={styles.user}>
