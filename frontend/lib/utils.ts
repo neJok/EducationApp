@@ -10,7 +10,6 @@ let gradients = [
   'linear-gradient(129deg, #d5a62d 0%, #fcd97f 38.63%, #f974d3 63.63%, #e5469c 100%)',
   'linear-gradient(129deg, #632dd5 0%, #af7ffc 38.63%, #ee74f9 61.63%, #e54646 100%)',
   'linear-gradient(129deg, #18b861 0%, #5ae239 38.63%, #aece2f 61.63%, #edba6d 100%)',
-  'linear-gradient(129deg, #eaee32 0%, #dfb668 38.63%, #528ee7 61.63%, #4660e5 100%)',
   'linear-gradient(129deg, #d52dce 0%, #e562d0 38.63%, #66c2f6 61.63%, #46e5d2 100%)'
 ]
 let remainingGradients = [...gradients]

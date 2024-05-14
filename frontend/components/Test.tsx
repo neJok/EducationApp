@@ -78,11 +78,13 @@ export default function Test({
             />
             <label htmlFor={`variant-${index}-${questionID}`} className={styles.label}>
               <Checkbox checked={questionAnswers.includes(index)} />
-              <span>{variant}</span>
+              <div>
+                <span>{variant}</span>
+              </div>
             </label>
           </div>
         )}
-        <div onClick={handleNext} className={styles.next}>
+        <div onClick={questionAnswers.length? handleNext : undefined} className={questionAnswers.length? styles.next : styles.disabled_next}>
           {questionID + 1 === lesson?.test?.length? 'Завершить' : 'Дальше'}
         </div>
       </div>
