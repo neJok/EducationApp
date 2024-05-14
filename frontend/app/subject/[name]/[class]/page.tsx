@@ -28,6 +28,7 @@ export default function Page({ params }: { params: { name: string, class: string
               {user?.completed_tests.includes(lesson.lesson_id) && '✔️'} {lesson.title}
             </Link>
           )}
+          {!data?.lessons.length && <h3 className={styles.no_data}>Скоро тут будут новые уроки!</h3>}
         </ul>
       </div>
     </>

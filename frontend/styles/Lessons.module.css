@@ -41,3 +41,9 @@
 .lesson:hover, .lessons:visited {
     opacity: 0.8;
 }
+
+.no_data {
+    font-size: 20px;
+    margin-top: 15px;
+    text-align: center;
+}
